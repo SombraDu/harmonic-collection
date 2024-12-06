@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('custom-cursor.png') 16 16, auto;
+}
+
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+.hover-image {
+    cursor: url('custom-cursor1.png') 16 16, pointer;
+}
+
+.image-container {
+    cursor: url('custom-cursor.png'), auto;
+}
+
+.background-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-banner .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; 
+    background-image: url('images/1.png'); 
+    background-size: 50px 50px;
+    background-repeat: repeat-x;
+    opacity: 1; 
+}
+
+
+.background-banner .layer-1 {
+    top: 0;
+    animation: scrollBanner 10s linear infinite;
+}
+
+.background-banner .layer-2 {
+    top: 20%;
+    animation: scrollBannerReverse 12s linear infinite;
+}
+
+.background-banner .layer-3 {
+    top: 40%;
+    animation: scrollBanner 14s linear infinite;
+}
+
+.background-banner .layer-4 {
+    top: 60%;
+    animation: scrollBannerReverse 16s linear infinite;
+}
+
+.background-banner .layer-5 {
+    top: 80%;
+    animation: scrollBanner 18s linear infinite;
+}
+
+.background-banner .layer-6 {
+    top: 95%;
+    animation: scrollBannerReverse 18s linear infinite;
+}
+
+@keyframes scrollBanner {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 0; }
+}
+
+@keyframes scrollBannerReverse {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 0 0; }
+}
+
+.memory-container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(107, 101, 107, 0.3);
+    background-color: #000000;
+    position: relative;
+    z-index: 1;
+}
+
+.memory-filter h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.memory-filter .date {
+    font-size: 1em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.memory-filter .description {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.memory-content {
+    position: relative;
+}
+
+
+.memory-content {
+    padding: 20px; 
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+}
+
+
+.image-container {
+    width: 100%;
+    max-width: 300px; 
+    height: 200px; 
+    overflow: hidden; 
+    position: relative;
+    background-color: #111; 
+}
+
+
+.hover-image {
+    width: 100%; 
+    height: 100%; 
+    transition: transform 0.5s ease; 
+    object-fit: cover; 
+}
+
+
+.image-container:hover .hover-image {
+    transform: scale(2); 
+}
+
+
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 25%, transparent 25%);
+    background-size: 8px 8px; 
+    mix-blend-mode: multiply; 
+    pointer-events: none; 
+    z-index: 1; 
+}
+
+
+.go-back {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px; 
+    left: 20px;
+    border: solid 1px  rgb(0, 0, 0) ;
+}
+
+.go-back:hover {
+    background-color: #000000;
+    transform: scale(1.1);
+    color: #ffffff;
+    cursor: url('custom-cursor1.png') 16 16, pointer;
+}
